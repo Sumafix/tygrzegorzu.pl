@@ -1,0 +1,1 @@
+# tygrzegorzu.pl

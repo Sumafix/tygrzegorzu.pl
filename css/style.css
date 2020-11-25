@@ -43,6 +43,9 @@
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+          0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
 }
 
 @media (min-width: 1000px) {
@@ -71,7 +74,7 @@ section {
 img {
     display: block;
     max-width: 100%;
-    max-height: 100vh;
+    
 }
 
 strong {
@@ -120,13 +123,31 @@ h3 {
 .section__subtitle--about {
     background: var(--clr-accent);
     font-family: var(--ff-secondary);
+    padding: .25em 1em;
     margin-bottom: 1em;
+}
+
+.intro__img {
+    max-height: 100vh;
+    min-width: 250px;
+    min-height: 250px;
+    margin: 0 auto;
+    box-shadow: var(--bs);
 }
 
 
 
 .intro {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section__subtitle--intro {
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 @media (min-width: 800px) {
@@ -143,6 +164,17 @@ h3 {
 
     .intro__img {
         grid-area: img;
-        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
     }
 }

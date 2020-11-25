@@ -45,7 +45,7 @@
     --fs-body: 1rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
     :root {
         --fs-h1: 4.5rem;
         --fs-h2: 3.75rem;
@@ -64,11 +64,18 @@ body {
     line-height: 1.6;
 }
 
+section {
+    padding: 5em 2em;
+}
+
 img {
     display: block;
     max-width: 100%;
 }
 
+strong {
+    font-weight: var(--fw-bold);
+}
 
 h1,
 h2,
@@ -87,4 +94,54 @@ h2 {
 
 h3 {
     font-size: var(--fs-h3);
+}
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+    grid-area: "title";
+}
+
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+    grid-area: "subtitle";
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+
+
+.intro {
+    position: relative;
+}
+
+@media (min-width: 800px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+    }
 }

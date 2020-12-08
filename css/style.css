@@ -162,3 +162,12 @@ h3 {
 .fa {
   color: var(--clr-dark);
 }
+
+.mirror {
+  display: inline-block;
+  transition: transform 0.6s ease-in-out;
+}
+
+.container--intro:hover .mirror {
+  transform: rotateY(180deg);
+}
